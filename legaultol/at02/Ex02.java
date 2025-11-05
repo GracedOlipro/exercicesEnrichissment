@@ -1,15 +1,21 @@
 package legaultol.at02;
 
 import java.util.*;
+import java.math.*;
 
 public class Ex02 {
 public static void main(String[] args) {
-exercice8(args);
+
+     
+exercice9(args);
+    
  
 
 
     
 }
+
+
 
 
 
@@ -106,7 +112,7 @@ public static void exercice5(String[] args) {
 
 public static void exercice6(String[] args) {
     
-int iNumb[];
+
 ArrayList<Integer> nombres = new ArrayList<Integer>();
 Scanner entre = new Scanner(System.in);
 do{
@@ -135,6 +141,7 @@ System.out.println("la moyenne est de :"+moyenne);
 }
 
 public static void exercice7(String[] args) {
+
   int iConsonne=0, iVoyelles=0;
   String sMot;
     Scanner entre= new Scanner(System.in);
@@ -154,13 +161,54 @@ public static void exercice7(String[] args) {
 
     
 }
+
+
 public static void exercice8(String[] args) {
-    
+
+
+    ArrayList<String> Mots = new ArrayList<String>();//déclare la liste
+
+
+    Scanner entre = new Scanner(System.in);
+do{
+
+    System.out.println("entrez un mot :");
+    Mots.add(entre.nextLine());
+    Mots.getLast().toLowerCase();
+
+}
+while(Mots.getLast().equals("stop") == false);
+Mots.removeLast();
+Mots.sort(null);//sort les mots
+System.out.println("le premier mot est "+Mots.getFirst());
+System.out.println("le dernier mot est "+Mots.getLast());
+
+
+
 }
 
+
+public static float circon(float fRayon) {
+        // Using the correct formula for circumference
+        float fCirconference = 2 * (float)Math.PI * fRayon;
+        return fCirconference;
+    }
 public static void exercice9(String[] args) {
+
+    float fRayon;
+
+    Scanner entre= new Scanner(System.in);
+    System.out.println("bonjour, entrez le rayon du cercle a calculer en cm");
+    fRayon=entre.nextFloat();
+    circon(fRayon);
+    System.out.println("la circonférence du cercle est de "+circon(fRayon)+" cm");
     
+
+ 
+
+
 }
+
 
 public static void exercice10(String[] args) {
     
