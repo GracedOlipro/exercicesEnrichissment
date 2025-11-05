@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+          "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+          "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<module name="Checker">
+  <property name="severity" value="info"/>
+  <property name="fileExtensions" value="java"/>
+  <property name="tabWidth" value="4"/>
+
+  <module name="BeforeExecutionExclusionFileFilter">
+    <property name="fileNamePattern" value="module\-info\.java$"/>
+  </module>
+
+  <module name="TreeWalker">
+<!-- Nomenclature -->
+<!-- Avancés -->
+<module name="AbbreviationAsWordInName">
+  <property name="allowedAbbreviationLength" value="4"/>
+</module>
+<module name="ConstantName"/>
+<module name="IllegalIdentifierName"/>
+<module name="LocalFinalVariableName"/>
+<module name="LocalVariableName"/>
+<module name="MemberName"/>
+<module name="MethodName"/>
+<module name="PackageName">
+  <property name="format" value="^[a-z][a-z0-9]*(\.[a-z][a-z0-9]*)*$"/>
+</module>
+<module name="ParameterName"/>
+<module name="StaticVariableName"/>
+<module name="EnumValueName"/>
+<module name="UniformEnumConstantName"/>
+
+<!-- Imports -->
+<!-- Avancés + UnusedImports -->
+<module name="PackageDeclaration"/>
+<module name="RedundantImport"/>
+<module name="OuterTypeFilename"/>
+
+<!-- Base -->
+<!-- Ne vérifie plus pour le type double (value="var, double"), car on le force dans les appels de méthodes. -->
+<!-- TODO: Pour les casts inutiles -> Utilisation inadéquate de la conversion explicite (cast). -->
+<!-- Avancés + HiddenField + NoArrayTrailingComma + NoEnumTrailingComma + UnnecessaryParentheses + UnnecessarySemicolonInEnumeration + SeparatorWrap + TypecastParenPad ++ ForbidInstantiation ++ MultipleStringLiteralsExtended ++ UnnecessaryParenthesesExtended -->
+<module name="ArrayTypeStyle"/>
+<module name="IllegalType">
+  <property name="illegalClassNames" value="var"/>
+</module>
+<module name="AvoidNestedBlocks"/>
+<module name="EmptyStatement"/>
+<module name="InnerAssignment"/>
+<module name="OneStatementPerLine"/>
+<module name="StringLiteralEquality"/>
+<module name="NoCodeInFile"/>
+<module name="NoLineWrap"/>
+<module name="IllegalTokenText">
+  <property name="tokens" value="NUM_INT,NUM_LONG"/>
+  <property name="format" value="^0[^lx]"/>
+  <property name="ignoreCase" value="true"/>
+</module>
+
+<!-- Méthodes -->
+<!-- TODO: Pour Var name == function name -->
+<!-- Avancés + UnusedLocalVariable ++ NoNullForCollectionReturn ++ SimpleAccessorNameNotation ++ HideUtilityClassConstructor ++ InnerClass +++ IllegalMethodCall -->
+<module name="ReturnCount">
+  <property name="max" value="1"/>
+  <property name="maxForVoid" value="0"/>
+</module>
+<module name="RedundantReturn"/>
+<module name="ForbidCertainMethod">
+    <property name="methodName" value="main"/>
+    <property name="argumentCount" value="1"/>
+</module>
+<module name="ForbidCertainMethod">
+    <property name="methodName" value="exit"/>
+    <property name="argumentCount" value="1"/>
+ </module>
+
+<!-- Décisions -->
+<!-- Avancés + SimplifyBooleanExpression + SimplifyBooleanReturn + DefaultComesLast + MissingSwitchDefault ++ ConfusingCondition ++ ReturnBooleanFromTernary ++ ReturnNullInsteadOfBoolean -->
+<module name="EmptyBlock"/>
+<module name="NeedBraces"/>
+<module name="AvoidInlineConditionals"/>
+<module name="FallThrough"/>
+<module name="AvoidNotShortCircuitOperatorsForBoolean"/>
+<module name="TernaryPerExpressionCount"/>
+<module name="NestedSwitch"/>
+
+<!-- Répétitions -->
+<!-- Avancés -->
+<module name="ModifiedControlVariable"/>
+<module name="IllegalToken"/>
+<module name="SingleBreakOrContinue">
+  <message key="single.break.or.continue.in.loops" value="Il est interdit d''utiliser des break ou continue dans les boucles."/>
+</module>
+<module name="DescendantToken">
+  <property name="tokens" value="FOR_INIT, FOR_CONDITION, FOR_ITERATOR"/>
+  <property name="limitedTokens" value="EXPR"/>
+  <property name="minimumNumber" value="1"/>
+</module>
+<module name="DescendantToken">
+  <property name="tokens" value="FOR_INIT, FOR_CONDITION, FOR_ITERATOR"/>
+  <property name="limitedTokens" value="COMMA, LAND, LOR"/>
+  <property name="maximumNumber" value="0"/>
+</module>
+<module name="DescendantToken">
+  <property name="tokens" value="LITERAL_WHILE"/>
+  <property name="limitedTokens" value="LITERAL_TRUE"/>
+  <property name="maximumDepth" value="2"/>
+  <property name="maximumNumber" value="0"/>
+</module>
+
+<!-- Exceptions -->
+<!-- Avancés + UnnecessarySemicolonInTryWithResources ++ EitherLogOrThrow ++ IllegalCatchExtended -->
+<module name="EmptyCatchBlock"/>
+<module name="IllegalCatch"/>
+<module name="IllegalThrows"/>
+<module name="ForbidReturnInFinallyBlock"/>
+<module name="ForbidThrowAnonymousExceptions"/>
+<module name="UselessSingleCatch"/>
+<module name="DescendantToken">
+  <property name="tokens" value="LITERAL_TRY"/>
+  <property name="limitedTokens" value="LITERAL_CATCH, LITERAL_FINALLY"/>
+  <property name="maximumDepth" value="1"/>
+  <property name="sumTokenCounts" value="true"/>
+  <property name="minimumNumber" value="1"/>
+  <property name="minimumMessage" value="Un try doit toujours être suivi d''un catch ou d''un finally."/>
+</module>
+
+<!-- Javadoc -->
+<!-- Avancés + JavadocMissingLeadingAsterisk + JavadocMissingWhitespaceAfterAsterisk -->
+<module name="InvalidJavadocPosition"/>
+<module name="JavadocBlockTagLocation"/>
+<module name="JavadocMethod"/>
+<module name="NonEmptyAtclauseDescription"/>
+<module name="JavadocStyle">
+  <property name="checkFirstSentence" value="false"/>
+  <property name="checkEmptyJavadoc" value="true"/>
+  <property name="checkHtml" value="false"/>
+</module>
+  </module>
+</module>
