@@ -7,7 +7,7 @@ public class Ex02 {
 public static void main(String[] args) {
 
      
-exercice9(args);
+exercice10(args);
     
  
 
@@ -209,10 +209,50 @@ public static void exercice9(String[] args) {
 
 }
 
+public static int plusgrand(int iNombreUn,int iNombreDeux){
+int iNombreGrand=0;
+    if (iNombreUn>iNombreDeux) {
+        iNombreGrand=1;
+    }
+    else if (iNombreDeux>iNombreUn) {
+        iNombreGrand=2;
+    }
+    else{
+        iNombreGrand=0;
+    }
 
+
+    return iNombreGrand;
+}
 public static void exercice10(String[] args) {
+int iNombreUn=0,iNombreDeux=0;
+Scanner entre1= new Scanner(System.in);
+Scanner entre2= new Scanner(System.in);
+
+
+System.out.println("bonjour, veuillez entrez le premier numéro:");
+iNombreUn=entre1.nextInt();
+System.out.println("veuillez entrez le deuxième numéro:");
+iNombreDeux=entre2.nextInt();
+
+plusgrand(iNombreUn, iNombreDeux);
+if (plusgrand(iNombreUn, iNombreDeux)==1) {
+    System.out.println("le premier numéro es tle plus grand");
+}
+else if (plusgrand(iNombreUn, iNombreDeux)==2) {
+    System.out.println("le deuxième numéro est le plus grand");    
+}
+else{
+    System.out.println("les deux numéros sont pareil");
+}
     
 }
+
+
+public static void exercice11(String[] args) {
+    
+}
+
 
 public static void exercice12(String[] args) {
     
