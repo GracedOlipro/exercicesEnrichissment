@@ -7,7 +7,7 @@ public class Ex02 {
 public static void main(String[] args) {
 
      
-exercice11(args);
+exercice12(args);
     
  
 
@@ -268,14 +268,35 @@ int iNombre=0;
 Scanner entre =new Scanner(System.in);
 System.out.println("bonjour, veuillez entrez le numéro: ");
 iNombre=entre.nextInt();
-factorielle(iNombre);
 System.out.println("la valeur factorielle du nombre "+iNombre+" est de "+factorielle(iNombre));
 
     
 }
 
+    public static int sommeMinMax(int iMin , int iMax){
+            int iNumb=iMin;
+        
+            for (int i=iMin+1; i <= iMax; i++){
+                    iNumb+=i;
+            }
+          
+            return iNumb;
 
+    }
 public static void exercice12(String[] args) {
+    int iMin=0,iMax=0;
+    Scanner entre1 = new Scanner(System.in);
+    System.out.println("entrez le numéro minimum:");
+    iMin=entre1.nextInt();
+    Scanner entre2 =new Scanner(System.in);
+    System.out.println("entrez le numéro maximum:");
+    iMax=entre2.nextInt();
+    sommeMinMax(iMin, iMax);
+    System.out.println("la somme de ces chiffres est: "+sommeMinMax(iMin, iMax));
+
+
+
+
     
 }
 
