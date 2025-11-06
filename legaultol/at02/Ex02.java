@@ -7,7 +7,7 @@ public class Ex02 {
 public static void main(String[] args) {
 
      
-exercice10(args);
+exercice11(args);
     
  
 
@@ -248,9 +248,28 @@ else{
     
 }
 
+public static int factorielle(int iNombre){
+    int iFact=1;
+    int i;
 
+
+    
+  for(i=1;i<=iNombre;i++){
+      iFact=iFact*i;//calcule la factorasitationnn ou wtv ca sepelle 
+  }
+
+
+    return iFact;
+
+
+}
 public static void exercice11(String[] args) {
-
+int iNombre=0;
+Scanner entre =new Scanner(System.in);
+System.out.println("bonjour, veuillez entrez le numéro: ");
+iNombre=entre.nextInt();
+factorielle(iNombre);
+System.out.println("la valeur factorielle du nombre "+iNombre+" est de "+factorielle(iNombre));
 
     
 }
