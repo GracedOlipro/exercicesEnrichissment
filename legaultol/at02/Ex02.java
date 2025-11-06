@@ -325,22 +325,27 @@ public static float convFar(float fTemp){
 
 public static void exercice13(String[] args) {
 float ftemp=0;
-int choix=0;
+String choix="";
 Scanner entre1 = new Scanner(System.in);
 Scanner entre2 = new Scanner(System.in);
 
 
+do{
+    System.out.println("type de conversion a faire?  C a F [F]   F a C [C] ");
+choix=entre2.nextLine();
+choix.toLowerCase();
+}
+while(!choix.equals("F")&&!choix.equals("C"));
+    
 
-    System.out.println("type de conversion a faire?  C a F [1]   F a C [2] ");
-choix=entre2.nextInt();
 System.out.println("entrez la température a convertir (en degrés)");
 ftemp=entre1.nextFloat();
-if (choix==1) {
+if (choix.equals("F")) {
 
     System.out.println("la température en farenheit est "+convCel(ftemp)+"° F");
     
 }
-else if (choix==2) {
+else if (choix.equals("C")) {
 
     System.out.println("la température en Celcius est "+convFar(ftemp)+"° C");
     
