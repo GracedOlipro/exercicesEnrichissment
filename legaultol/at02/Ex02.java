@@ -7,7 +7,7 @@ public class Ex02 {
 public static void main(String[] args) {
 
      
-exercice12(args);
+exercice13(args);
     
  
 
@@ -300,8 +300,61 @@ public static void exercice12(String[] args) {
     
 }
 
+public static float convCel(float fTemp){
+
+
+    float fTempF=0;
+
+    fTempF=fTemp*9/5+32;
+    return fTempF;
+
+
+}
+
+public static float convFar(float fTemp){
+
+
+    float fTempC=0;
+
+    fTempC=(fTemp-32)*5/9;
+    return fTempC;
+
+
+}
+
 
 public static void exercice13(String[] args) {
+float ftemp=0;
+int choix=0;
+Scanner entre1 = new Scanner(System.in);
+Scanner entre2 = new Scanner(System.in);
+
+
+
+    System.out.println("type de conversion a faire?  C a F [1]   F a C [2] ");
+choix=entre2.nextInt();
+System.out.println("entrez la température a convertir (en degrés)");
+ftemp=entre1.nextFloat();
+if (choix==1) {
+
+    System.out.println("la température en farenheit est "+convCel(ftemp)+"° F");
+    
+}
+else if (choix==2) {
+
+    System.out.println("la température en Celcius est "+convFar(ftemp)+"° C");
+    
+}
+
+
+
+
+
+
+
+
+
+
     
 }
 
